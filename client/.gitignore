@@ -1,3 +1,5 @@
 node_modules
 src/result.ts
 yarn.lock
+main.js
+main.js.map

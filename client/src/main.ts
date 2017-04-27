@@ -1,5 +1,7 @@
 import {DateWrapper, ListWrapper, StringWrapper, validateAdherent} from "./result";
 
+declare const PR: any;
+
 // ===== Start Model =====
 let model = {
     email: {content: new StringWrapper("")},
@@ -94,12 +96,16 @@ function updateDeep(attribute, object, value) {
 }
 
 // ===== Reload =====
+
 function reload() {
     const $input = document.querySelector("#input-json");
     const $output = document.querySelector("#form-result");
     const validations = formValidation(model);
     $input.textContent = JSON.stringify(model, replaceNatives, " ");
     $output.textContent = JSON.stringify(validations, null, " ");
+    $input.classList.remove("prettyprinted");
+    $output.classList.remove("prettyprinted");
+    PR.prettyPrint();
 }
 
 reload();

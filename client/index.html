@@ -6,6 +6,7 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.rawgit.com/google/code-prettify/master/styles/desert.css"/>
   <style>
     .row {
       display: flex;
@@ -35,6 +36,11 @@
     .field input {
       flex-grow: 1;
       padding: 0.5rem;
+    }
+
+    li.L0, li.L1, li.L2, li.L3,
+    li.L5, li.L6, li.L7, li.L8 {
+      list-style-type: decimal !important;
     }
   </style>
 </head>
@@ -204,14 +210,15 @@
   </div>
 
   <div class="column">
-    <pre id="input-json"></pre>
+    <pre class="prettyprint linenums" id="input-json"></pre>
   </div>
 
   <div class="column">
-    <pre id="form-result"></pre>
+    <pre class="prettyprint linenums" id="form-result"></pre>
   </div>
 </div>
 
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/prettify.js"></script>
 <script src="main.js"></script>
 </body>
 </html>

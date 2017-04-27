@@ -912,6 +912,9 @@ function reload() {
     var validations = formValidation(model);
     $input.textContent = JSON.stringify(model, replaceNatives, " ");
     $output.textContent = JSON.stringify(validations, null, " ");
+    $input.classList.remove("prettyprinted");
+    $output.classList.remove("prettyprinted");
+    PR.prettyPrint();
 }
 reload();
 // ===== Form validation =====

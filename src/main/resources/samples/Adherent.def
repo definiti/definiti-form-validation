@@ -1,0 +1,108 @@
+type Adherent {
+  email: Email
+  nom: ProperNoun
+  prenom: ProperNoun
+  adresse: Adresse
+  telephones: List[TelephoneEntry]
+  adhesions: List[Adhesion]
+}
+
+type Email {
+  content: String
+
+  verify {
+    "The format of the email address is invalid"
+    (email: Email) => {
+      email.content.contains("@")
+    }
+  }
+}
+
+type ProperNoun {
+  content: String
+
+  verify {
+    "The proper noun must be defined"
+    (properNoun: ProperNoun) => {
+      properNoun.content.nonEmpty()
+    }
+  }
+}
+
+type Adresse {
+  voie: String
+  codePostal: CodePostal
+  ville: String
+
+  verify {
+    "The voie should not be empty"
+    (adresse: Adresse) => {
+      adresse.voie.nonEmpty()
+    }
+  }
+
+  verify {
+    "The ville should not be empty"
+    (adresse: Adresse) => {
+      adresse.ville.nonEmpty()
+    }
+  }
+}
+
+type CodePostal {
+  content: String
+
+  verify {
+    "The code postal must be 5 digits long"
+    (codePostal: CodePostal) => {
+      codePostal.content.matches("^[0-9]{5}$")
+    }
+  }
+}
+
+type TelephoneEntry {
+  nom: String
+  telephone: Telephone
+}
+
+type Telephone {
+  content: String
+
+  verify {
+    "The telephone is invalid"
+    (telephone: Telephone) => {
+      telephone.content.trim().nonEmpty()
+      &&
+      telephone.content.trim().matches("^([0-9]{10}|\\+33[0-9]{9})$")
+    }
+  }
+}
+
+type Adhesion {
+  periode: Periode
+  membres: List[AdhesionMembre]
+}
+
+type Periode {
+  start: Date
+  end: Date
+
+  verify {
+    "end should be after start"
+    (periode: Periode) => { periode.end > periode.start || periode.end == periode.start }
+  }
+}
+
+type AdhesionMembre {
+  nom: ProperNoun
+  prenom: ProperNoun
+  naissance: Date
+  activite: String
+
+  verify {
+    "activite should not be empty"
+    (adhesionMembre: AdhesionMembre) => {
+      adhesionMembre.activite.nonEmpty()
+    }
+  }
+}

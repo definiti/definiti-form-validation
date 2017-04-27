@@ -1,0 +1,217 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .row {
+      display: flex;
+      margin-bottom: 1rem;
+    }
+
+    .column {
+      flex-grow: 1;
+      padding: 5px;
+      overflow: auto;
+      max-height: 95vh;
+    }
+
+    .field {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .field label {
+      text-align: right;
+      padding-right: 1rem;
+      font-weight: bold;
+      width: 150px;
+    }
+
+    .field input {
+      flex-grow: 1;
+      padding: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+<div class="row">
+  <div class="column">
+    <fieldset>
+      <legend>Adherent</legend>
+
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email" data-type="stringWrapper"/>
+      </div>
+
+      <div class="field">
+        <label for="nom">Nom</label>
+        <input type="text" name="nom" id="nom" data-type="stringWrapper"/>
+      </div>
+
+      <div class="field">
+        <label for="prenom">Prénom</label>
+        <input type="text" name="prenom" id="prenom" data-type="stringWrapper"/>
+      </div>
+
+      <fieldset>
+        <legend>Adresse</legend>
+        <div class="field">
+          <label for="adresse.voie">Voie</label>
+          <input type="text" name="adresse.voie" id="adresse.voie" data-type="string"/>
+        </div>
+
+        <div class="field">
+          <label for="adresse.codePostal">Code postal</label>
+          <input type="text" name="adresse.codePostal" id="adresse.codePostal" data-type="stringWrapper"/>
+        </div>
+
+        <div class="field">
+          <label for="adresse.ville">Ville</label>
+          <input type="text" name="adresse.ville" id="adresse.ville" data-type="string"/>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>TelephoneEntries</legend>
+
+        <fieldset>
+          <legend>TelephoneEntry 0</legend>
+          <div class="field">
+            <label for="telephones.0.nom">Nom</label>
+            <input type="text" name="telephones.0.nom" id="telephones.0.nom" data-type="string"/>
+          </div>
+
+          <div class="field">
+            <label for="telephones.0.telephone">Numéro</label>
+            <input type="text" name="telephones.0.telephone" id="telephones.0.telephone" data-type="stringWrapper"/>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>TelephoneEntry 1</legend>
+          <div class="field">
+            <label for="telephones.1.nom">Nom</label>
+            <input type="text" name="telephones.1.nom" id="telephones.1.nom" data-type="string"/>
+          </div>
+
+          <div class="field">
+            <label for="telephones.1.telephone">Numéro</label>
+            <input type="text" name="telephones.1.telephone" id="telephones.1.telephone" data-type="stringWrapper"/>
+          </div>
+        </fieldset>
+      </fieldset>
+
+      <fieldset>
+        <legend>Adhesions</legend>
+
+        <fieldset>
+          <legend>Adhesion 0</legend>
+
+          <fieldset>
+            <legend>Période</legend>
+
+            <div class="field">
+              <label for="adhesions.0.periode.start">Start</label>
+              <input type="date" name="adhesions.0.periode.start" id="adhesions.0.periode.start" data-type="date"/>
+            </div>
+
+            <div class="field">
+              <label for="adhesions.0.periode.end">End</label>
+              <input type="date" name="adhesions.0.periode.end" id="adhesions.0.periode.end" data-type="date"/>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Membres</legend>
+
+            <fieldset>
+              <legend>Membre 0</legend>
+
+              <div class="field">
+                <label for="adhesions.0.membres.0.nom">Nom</label>
+                <input type="text" name="adhesions.0.membres.0.nom" id="adhesions.0.membres.0.nom" data-type="stringWrapper"/>
+              </div>
+              <div class="field">
+                <label for="adhesions.0.membres.0.prenom">Prénom</label>
+                <input type="text" name="adhesions.0.membres.0.prenom" id="adhesions.0.membres.0.prenom" data-type="stringWrapper"/>
+              </div>
+              <div class="field">
+                <label for="adhesions.0.membres.0.naissance">Date de naissance</label>
+                <input type="date" name="adhesions.0.membres.0.naissance" id="adhesions.0.membres.0.naissance" data-type="date"/>
+              </div>
+              <div class="field">
+                <label for="adhesions.0.membres.0.activite">Activité</label>
+                <input type="text" name="adhesions.0.membres.0.activite" id="adhesions.0.membres.0.activite" data-type="string"/>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Membre 1</legend>
+
+              <div class="field">
+                <label for="adhesions.0.membres.1.nom">Nom</label>
+                <input type="text" name="adhesions.0.membres.1.nom" id="adhesions.0.membres.1.nom" data-type="stringWrapper"/>
+              </div>
+              <div class="field">
+                <label for="adhesions.0.membres.1.prenom">Prénom</label>
+                <input type="text" name="adhesions.0.membres.1.prenom" id="adhesions.0.membres.1.prenom" data-type="stringWrapper"/>
+              </div>
+              <div class="field">
+                <label for="adhesions.0.membres.1.naissance">Date de naissance</label>
+                <input type="date" name="adhesions.0.membres.1.naissance" id="adhesions.0.membres.1.naissance" data-type="date"/>
+              </div>
+              <div class="field">
+                <label for="adhesions.0.membres.1.activite">Activité</label>
+                <input type="text" name="adhesions.0.membres.1.activite" id="adhesions.0.membres.1.activite" data-type="string"/>
+              </div>
+            </fieldset>
+          </fieldset>
+        </fieldset>
+
+        <fieldset>
+          <legend>Adhesion 0</legend>
+
+          <fieldset>
+            <legend>Période</legend>
+
+            <div class="field">
+              <label for="adhesions.0.periode.start">Start</label>
+              <input type="date" name="adhesions.0.periode.start" id="adhesions.1.periode.start" data-type="date"/>
+            </div>
+
+            <div class="field">
+              <label for="adhesions.0.periode.end">End</label>
+              <input type="date" name="adhesions.0.periode.end" id="adhesions.1.periode.end" data-type="date"/>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Membres</legend>
+
+            <p>La flemme!</p>
+          </fieldset>
+        </fieldset>
+
+      </fieldset>
+    </fieldset>
+  </div>
+
+  <div class="column">
+    <pre id="input-json"></pre>
+  </div>
+
+  <div class="column">
+    <pre id="form-result"></pre>
+  </div>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>

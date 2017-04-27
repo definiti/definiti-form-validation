@@ -1,0 +1,24 @@
+{
+  "name": "zen.taiga",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "dependencies": {
+    "skatejs": "^4.6.7",
+    "skatejs-web-components": "^5.2.1",
+    "source-map-loader": "^0.1.6"
+  },
+  "devDependencies": {
+    "ts-loader": "^2.0.1",
+    "typescript": "^2.2.1",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.1"
+  },
+  "scripts": {
+    "serve": "webpack-dev-server",
+    "build": "webpack",
+    "watch": "webpack --watch"
+  },
+  "author": "",
+  "license": "ISC"
+}

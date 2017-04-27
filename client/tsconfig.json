@@ -1,0 +1,22 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "lib": ["dom", "es2015", "es2016"],
+    "jsx": "react",
+    "jsxFactory": "skate.h",
+    "module": "es2015",
+    "moduleResolution": "node",
+    "noEmitOnError": false,
+    "noImplicitAny": false,
+    "preserveConstEnums": true,
+    "removeComments": false,
+    "suppressImplicitAnyIndexErrors": true,
+    "target": "es5",
+    "alwaysStrict": false,
+    "noUnusedLocals": false,
+    "pretty": true,
+    "sourceMap": true,
+    "outDir": "./dist/"
+  }
+}
